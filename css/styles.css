@@ -302,6 +302,8 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     gap: 1rem;
     margin-top: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 /* Contact Section */
@@ -403,6 +405,7 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+    padding: 0 1rem;
 }
 
 .team-member {
@@ -413,6 +416,7 @@ h1, h2, h3, h4, h5, h6 {
     transition: var(--transition);
     max-width: 300px;
     margin: 0 auto;
+    width: 100%;
 }
 
 .member-image {
@@ -447,9 +451,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .member-info h3 {
+    font-size: 1.25rem;
     margin-bottom: 0.5rem;
     color: var(--text-color);
-    font-size: 1.25rem;
+    word-wrap: break-word;
 }
 
 .member-role {
@@ -466,13 +471,21 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1rem;
 }
 
+.document-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Supervisor Section */
 .supervisor-info {
     margin-top: 4rem;
     padding-top: 2rem;
     border-top: 1px solid var(--border-color);
 }
 
-/* Supervisor Section */
 .supervisor-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -481,6 +494,7 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+    padding: 0 1rem;
 }
 
 .supervisor-card {
@@ -490,17 +504,16 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: var(--transition);
     text-align: center;
-}
-
-.supervisor-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
 }
 
 .supervisor-details h3 {
-    color: var(--text-color);
-    margin-bottom: 0.5rem;
     font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    word-wrap: break-word;
 }
 
 .supervisor-role {
@@ -527,18 +540,43 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(-2px);
 }
 
-/* Responsive adjustments for team section */
+/* Responsive Design */
 @media (max-width: 1200px) {
-    .team-grid {
+    .team-grid,
+    .supervisor-grid {
         grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
         gap: 2rem;
-        padding: 0 1rem;
+    }
+
+    .container {
+        padding: 0 1.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .team-grid,
+    .supervisor-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .member-image {
+        height: 300px;
+    }
+
+    .supervisor-card {
+        padding: 1.75rem;
     }
 }
 
 @media (max-width: 768px) {
-    .team-grid {
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    .section {
+        padding: 4rem 0;
+    }
+
+    .team-grid,
+    .supervisor-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 1.5rem;
     }
 
@@ -546,25 +584,24 @@ h1, h2, h3, h4, h5, h6 {
         height: 280px;
         padding: 1rem;
     }
-}
 
-@media (max-width: 480px) {
-    .team-grid {
-        grid-template-columns: 1fr;
-        max-width: 300px;
+    .member-info h3,
+    .supervisor-details h3 {
+        font-size: 1.2rem;
     }
 
-    .member-image {
-        height: 300px;
+    .member-role,
+    .supervisor-role {
+        font-size: 1rem;
     }
-}
 
-/* Responsive adjustments for supervisor section */
-@media (max-width: 768px) {
-    .supervisor-grid {
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 1.5rem;
-        padding: 0 1rem;
+    .document-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .document-actions .btn {
+        width: 100%;
     }
 
     .supervisor-card {
@@ -572,10 +609,55 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
+    .team-grid,
     .supervisor-grid {
         grid-template-columns: 1fr;
-        max-width: 320px;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .member-image {
+        height: 300px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .member-info,
+    .supervisor-details {
+        padding: 1.25rem;
+    }
+
+    .btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .team-member,
+    .supervisor-card {
+        max-width: 280px;
+    }
+
+    .member-image {
+        height: 280px;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .member-info h3,
+    .supervisor-details h3 {
+        font-size: 1.1rem;
     }
 }
 
