@@ -921,6 +921,9 @@ h1, h2, h3, h4, h5, h6 {
     gap: 2rem;
     margin-top: 2rem;
     padding: 0 1rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .gallery-item {
@@ -929,30 +932,24 @@ h1, h2, h3, h4, h5, h6 {
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    aspect-ratio: 4/3;
-}
-
-.gallery-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    aspect-ratio: 16/9;
+    background-color: #f8f9fa;
 }
 
 .gallery-link {
     display: block;
     width: 100%;
     height: 100%;
+    position: relative;
 }
 
 .gallery-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     display: block;
     transition: transform 0.3s ease;
-}
-
-.gallery-item:hover .gallery-image {
-    transform: scale(1.05);
+    background-color: white;
 }
 
 .gallery-overlay {
@@ -960,14 +957,10 @@ h1, h2, h3, h4, h5, h6 {
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
     padding: 1.5rem 1rem;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.gallery-item:hover .gallery-overlay {
     opacity: 1;
+    transition: opacity 0.3s ease;
 }
 
 .gallery-caption {
@@ -977,141 +970,35 @@ h1, h2, h3, h4, h5, h6 {
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-/* Enhanced Mobile Responsiveness */
-@media (max-width: 1200px) {
+@media (max-width: 768px) {
     .gallery-grid {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 1.75rem;
-    }
-
-    .gallery-section {
-        padding: 3.5rem 0;
-    }
-}
-
-@media (max-width: 992px) {
-    .gallery-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 1.5rem;
+    }
+
+    .gallery-item {
+        aspect-ratio: 4/3;
+    }
+
+    .gallery-overlay {
+        padding: 1rem;
     }
 
     .gallery-caption {
         font-size: 1rem;
     }
-
-    .gallery-overlay {
-        padding: 1.25rem 1rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .gallery-section {
-        padding: 3rem 0;
-    }
-
-    .gallery-grid {
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 1.25rem;
-        padding: 0 0.75rem;
-    }
-
-    .gallery-item {
-        border-radius: 10px;
-    }
-
-    .gallery-overlay {
-        padding: 1rem;
-        opacity: 1;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4));
-    }
-
-    .gallery-caption {
-        font-size: 0.95rem;
-    }
-
-    .section-title {
-        font-size: 2rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .document-preview {
-        height: 250px;
-    }
-
-    .document-content {
-        padding: 1.5rem;
-    }
-
-    .document-actions {
-        flex-direction: column;
-        gap: 0.75rem;
-    }
-
-    .document-actions .btn {
-        width: 100%;
-        justify-content: center;
-    }
 }
 
 @media (max-width: 576px) {
-    .gallery-section {
-        padding: 2.5rem 0;
-    }
-
     .gallery-grid {
         grid-template-columns: 1fr;
         max-width: 400px;
         margin-left: auto;
         margin-right: auto;
-        gap: 1rem;
     }
 
     .gallery-item {
-        border-radius: 8px;
-    }
-
-    .gallery-overlay {
-        padding: 0.875rem;
-    }
-
-    .gallery-caption {
-        font-size: 0.9rem;
-    }
-
-    .section-title {
-        font-size: 1.75rem;
-        margin-bottom: 1.25rem;
-    }
-
-    .container {
-        padding: 0 1rem;
-    }
-
-    .document-preview {
-        height: 200px;
-    }
-
-    .document-content {
-        padding: 1.25rem;
-    }
-
-    .document-meta {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    .document-details {
-        padding: 1rem;
-    }
-
-    .document-details h4 {
-        font-size: 1.1rem;
-        margin: 1rem 0 0.75rem;
-    }
-
-    .content-list li {
-        padding-left: 1.25rem;
-        font-size: 0.95rem;
+        aspect-ratio: 3/2;
     }
 }
 
@@ -1121,39 +1008,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .gallery-item {
-        border-radius: 6px;
-    }
-
-    .gallery-overlay {
-        padding: 0.75rem;
-    }
-
-    .gallery-caption {
-        font-size: 0.85rem;
-    }
-
-    .section-title {
-        font-size: 1.5rem;
-    }
-
-    .document-preview {
-        height: 180px;
-    }
-
-    .document-content {
-        padding: 1rem;
-    }
-
-    .document-details {
-        padding: 0.875rem;
-    }
-
-    .document-details h4 {
-        font-size: 1rem;
-    }
-
-    .content-list li {
-        font-size: 0.9rem;
+        aspect-ratio: 1/1;
     }
 }
 
