@@ -65,29 +65,71 @@ documentCards.forEach(card => {
     const previewContainer = card.querySelector('.document-preview');
     const pdfViewer = card.querySelector('.pdf-viewer');
     const pdfPlaceholder = card.querySelector('.pdf-placeholder');
+    const previewMessage = card.querySelector('.preview-message');
+    const downloadPreviewBtn = card.querySelector('.download-preview-btn');
     
     if (previewBtn) {
         previewBtn.addEventListener('click', () => {
-            const pdfUrl = previewBtn.dataset.pdf;
+            const fileUrl = previewBtn.dataset.pdf;
+            const isPdf = fileUrl.toLowerCase().endsWith('.pdf');
             
-            // Show PDF viewer
-            pdfPlaceholder.style.display = 'none';
-            pdfViewer.style.display = 'block';
-            pdfViewer.src = pdfUrl;
-            
-            // Update button state
-            previewBtn.textContent = 'Close Preview';
-            previewBtn.classList.toggle('active');
-            
-            // Toggle preview visibility
-            if (previewBtn.classList.contains('active')) {
-                previewContainer.style.height = '600px';
+            if (isPdf) {
+                // Handle PDF preview
+                pdfPlaceholder.style.display = 'none';
+                pdfViewer.style.display = 'block';
+                pdfViewer.src = fileUrl;
+                
+                // Update button state
+                previewBtn.textContent = 'Close Preview';
+                previewBtn.classList.toggle('active');
+                
+                // Toggle preview visibility
+                if (previewBtn.classList.contains('active')) {
+                    previewContainer.style.height = '600px';
+                } else {
+                    previewContainer.style.height = '400px';
+                    pdfViewer.src = '';
+                    pdfPlaceholder.style.display = 'flex';
+                    previewBtn.textContent = 'Preview Document';
+                }
             } else {
-                previewContainer.style.height = '400px';
-                pdfViewer.src = '';
-                pdfPlaceholder.style.display = 'flex';
-                previewBtn.textContent = 'Preview Document';
+                // Handle non-PDF files (like PowerPoint)
+                pdfPlaceholder.style.display = 'none';
+                if (previewMessage) {
+                    previewMessage.style.display = 'flex';
+                    previewMessage.style.flexDirection = 'column';
+                    previewMessage.style.alignItems = 'center';
+                    previewMessage.style.justifyContent = 'center';
+                    previewMessage.style.gap = '1rem';
+                }
+                
+                // Update button state
+                previewBtn.textContent = 'Close Preview';
+                previewBtn.classList.toggle('active');
+                
+                // Toggle preview visibility
+                if (!previewBtn.classList.contains('active')) {
+                    previewContainer.style.height = '400px';
+                    pdfPlaceholder.style.display = 'flex';
+                    if (previewMessage) {
+                        previewMessage.style.display = 'none';
+                    }
+                    previewBtn.textContent = 'Preview Document';
+                }
             }
+        });
+    }
+    
+    // Handle download preview button for non-PDF files
+    if (downloadPreviewBtn) {
+        downloadPreviewBtn.addEventListener('click', () => {
+            const fileUrl = previewBtn.dataset.pdf;
+            const link = document.createElement('a');
+            link.href = fileUrl;
+            link.download = fileUrl.split('/').pop();
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         });
     }
     
