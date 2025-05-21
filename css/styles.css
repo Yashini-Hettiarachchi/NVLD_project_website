@@ -468,6 +468,61 @@ h1, h2, h3, h4, h5, h6 {
     border-top: 1px solid var(--border-color);
 }
 
+/* Supervisor Section */
+.supervisor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.supervisor-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    text-align: center;
+}
+
+.supervisor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.supervisor-details h3 {
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+}
+
+.supervisor-role {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.supervisor-card .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.supervisor-card .contact-link:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-2px);
+}
+
 /* Responsive adjustments for team section */
 @media (max-width: 1200px) {
     .team-grid {
@@ -496,6 +551,26 @@ h1, h2, h3, h4, h5, h6 {
 
     .member-image {
         height: 340px;
+    }
+}
+
+/* Responsive adjustments for supervisor section */
+@media (max-width: 768px) {
+    .supervisor-grid {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+
+    .supervisor-card {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .supervisor-grid {
+        grid-template-columns: 1fr;
+        max-width: 320px;
     }
 }
 
