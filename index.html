@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Research Project Documentation - 24-25J-150">
+    <title>Research Project Documentation</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- PDF.js for PDF preview -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="#home" class="logo" aria-label="Home">Research Project</a>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#proposal" class="nav-link">Project Proposal</a></li>
+                <li><a href="#presentation" class="nav-link">Presentation</a></li>
+                <li><a href="#research" class="nav-link">Research Paper</a></li>
+                <li><a href="#report" class="nav-link">Final Report</a></li>
+                <li><a href="#logbook" class="nav-link">Logbook</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section home-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Research Project Documentation</h1>
+                <p class="hero-subtitle">24-25J-150</p>
+                <div class="hero-description">
+                    <p>Welcome to the comprehensive documentation of our research project. This website contains all relevant documents, presentations, and reports related to our research work.</p>
+                </div>
+                <div class="hero-cta">
+                    <a href="#proposal" class="btn btn-primary">View Documents</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Document Sections -->
+    <section id="proposal" class="section document-section">
+        <div class="container">
+            <h2 class="section-title">Project Proposal</h2>
+            <div class="document-grid">
+                <div class="document-card">
+                    <div class="document-preview" id="proposal-preview">
+                        <div class="pdf-placeholder">
+                            <i class="fas fa-file-pdf"></i>
+                            <p>Loading preview...</p>
+                        </div>
+                    </div>
+                    <div class="document-content">
+                        <h3>Project Proposal Document</h3>
+                        <p>Initial project proposal outlining the research objectives, methodology, and expected outcomes.</p>
+                        <div class="document-meta">
+                            <span class="document-date">Date: March 2024</span>
+                            <span class="document-size">Size: 715 KB</span>
+                        </div>
+                        <div class="document-actions">
+                            <button class="btn btn-primary preview-btn" data-document="proposal" data-pdf="24-25J-150-Students/24-25J-150-Students/1. Project Proposal/Individual Reports/24-25J-150_IT21181474.pdf">
+                                <i class="fas fa-eye"></i> Preview
+                            </button>
+                            <a href="24-25J-150-Students/24-25J-150-Students/1. Project Proposal/Individual Reports/24-25J-150_IT21181474.pdf" 
+                               class="btn btn-secondary" download>
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="presentation" class="section document-section">
+        <div class="container">
+            <h2 class="section-title">Project Presentation</h2>
+            <div class="document-grid">
+                <div class="document-card">
+                    <div class="document-preview" id="presentation-preview">
+                        <div class="pdf-placeholder">
+                            <i class="fas fa-file-powerpoint"></i>
+                            <p>Loading preview...</p>
+                        </div>
+                    </div>
+                    <div class="document-content">
+                        <h3>Project Presentation Slides</h3>
+                        <p>Presentation slides detailing the project progress, findings, and future work.</p>
+                        <div class="document-meta">
+                            <span class="document-date">Date: March 2024</span>
+                            <span class="document-size">Size: 4.6 MB</span>
+                        </div>
+                        <div class="document-actions">
+                            <button class="btn btn-primary preview-btn" data-document="presentation" data-pdf="24-25J-150-Students/24-25J-150-Students/1. Project Proposal/Presentation/24-25J-150 Slides.pptx">
+                                <i class="fas fa-eye"></i> Preview
+                            </button>
+                            <a href="24-25J-150-Students/24-25J-150-Students/1. Project Proposal/Presentation/24-25J-150 Slides.pptx" 
+                               class="btn btn-secondary" download>
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="research" class="section document-section">
+        <div class="container">
+            <h2 class="section-title">Research Paper</h2>
+            <div class="document-grid">
+                <div class="document-card">
+                    <div class="document-preview" id="research-preview">
+                        <div class="pdf-placeholder">
+                            <i class="fas fa-file-pdf"></i>
+                            <p>Loading preview...</p>
+                        </div>
+                    </div>
+                    <div class="document-content">
+                        <h3>Research Paper</h3>
+                        <p>Detailed research paper documenting the methodology, results, and conclusions of our study.</p>
+                        <div class="document-meta">
+                            <span class="document-date">Date: March 2024</span>
+                            <span class="document-size">Size: 245 KB</span>
+                        </div>
+                        <div class="document-actions">
+                            <button class="btn btn-primary preview-btn" data-document="research" data-pdf="24-25J-150-Students/24-25J-150-Students/4. Research Paper/24-25J-150-Research-Paper.pdf">
+                                <i class="fas fa-eye"></i> Preview
+                            </button>
+                            <a href="24-25J-150-Students/24-25J-150-Students/4. Research Paper/24-25J-150-Research-Paper.pdf" 
+                               class="btn btn-secondary" download>
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="report" class="section document-section">
+        <div class="container">
+            <h2 class="section-title">Final Report</h2>
+            <div class="document-grid">
+                <div class="document-card">
+                    <div class="document-preview" id="report-preview">
+                        <div class="pdf-placeholder">
+                            <i class="fas fa-file-pdf"></i>
+                            <p>Loading preview...</p>
+                        </div>
+                    </div>
+                    <div class="document-content">
+                        <h3>Final Project Report</h3>
+                        <p>Comprehensive final report summarizing the entire research project, including all findings and recommendations.</p>
+                        <div class="document-meta">
+                            <span class="document-date">Date: [Date]</span>
+                            <span class="document-size">Size: [Size]</span>
+                        </div>
+                        <div class="document-actions">
+                            <button class="btn btn-primary preview-btn" data-document="report">
+                                <i class="fas fa-eye"></i> Preview
+                            </button>
+                            <a href="documents/24-25J-150-Students/24-25J-150-Students/5. Final Report & Presentation/[Report File]" 
+                               class="btn btn-secondary" download>
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="logbook" class="section document-section">
+        <div class="container">
+            <h2 class="section-title">Logbook</h2>
+            <div class="document-grid">
+                <div class="document-card">
+                    <div class="document-preview" id="logbook-preview">
+                        <div class="pdf-placeholder">
+                            <i class="fas fa-book"></i>
+                            <p>Loading preview...</p>
+                        </div>
+                    </div>
+                    <div class="document-content">
+                        <h3>Project Logbook</h3>
+                        <p>Detailed logbook documenting the day-to-day progress, challenges, and solutions throughout the project.</p>
+                        <div class="document-meta">
+                            <span class="document-date">Date: March 2024</span>
+                            <span class="document-size">Size: Various</span>
+                        </div>
+                        <div class="document-actions">
+                            <a href="24-25J-150-Students/24-25J-150-Students/8. Log Book/GitLab ScreenShots" 
+                               class="btn btn-primary">
+                                <i class="fas fa-folder-open"></i> View GitLab Logs
+                            </a>
+                            <a href="24-25J-150-Students/24-25J-150-Students/8. Log Book/MS Team ScreenShots" 
+                               class="btn btn-secondary">
+                                <i class="fas fa-folder-open"></i> View MS Teams Logs
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <h2 class="section-title">Contact Information</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p>For any inquiries about the research project, please contact:</p>
+                    <div class="contact-details">
+                        <a href="mailto:[supervisor.email@example.com]" class="contact-link">
+                            <i class="fas fa-envelope"></i> Project Supervisor
+                        </a>
+                        <a href="mailto:[student.email@example.com]" class="contact-link">
+                            <i class="fas fa-envelope"></i> Research Student
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Research Project 24-25J-150. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#home" class="footer-link">Home</a>
+                <a href="#proposal" class="footer-link">Documents</a>
+                <a href="#contact" class="footer-link">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- PDF.js initialization -->
+    <script>
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    </script>
+    <!-- Custom JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html> 
