@@ -23,7 +23,7 @@ html {
 
 body {
     font-family: var(--font-main);
-    background-image: url('/assets/wallpaper.jpg');
+    background-image: url('../assets/wallpaper.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -44,6 +44,7 @@ body::before {
     height: 100%;
     background-color: rgba(255, 255, 255, 0.5);
     z-index: -1;
+    pointer-events: none;
 }
 
 /* Typography */
